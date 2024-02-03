@@ -1,0 +1,35 @@
+@startuml
+
+participant client as user
+
+box "API SERVICE"
+participant "API" as api
+database "Kafka" as kafka
+
+database postgres as db
+endbox
+
+user -> api : POST /
+activate api
+api -> kafka : Send a message to kafka to use kafka to manage queue
+activate kafka
+
+kafka -> kafka : Kafka Manage queue message to consume by comsumer
+kafka -> api: say to api send message success 
+deactivate kafka
+api -> user : User recive accepted from api
+deactivate api
+
+
+api -> kafka : Consume message from kafka
+activate api
+activate kafka
+kafka -> api : kafka send a message to api
+deactivate kafka
+api -> db : Insert a data to database 
+activate db
+db -> db: database insert data to table user
+db -> api : send success to api
+deactivate api
+
+@enduml
