@@ -5,6 +5,7 @@ go 1.21.6
 require (
 	github.com/IBM/sarama v1.42.1
 	github.com/labstack/echo/v4 v4.11.4
+	github.com/lib/pq v1.10.9
 )
 
 require (
@@ -23,7 +24,6 @@ require (
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
 	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/labstack/gommon v0.4.2 // indirect
-	github.com/lib/pq v1.10.9 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/pierrec/lz4/v4 v4.1.18 // indirect
